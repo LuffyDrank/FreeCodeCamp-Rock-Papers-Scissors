@@ -96,14 +96,14 @@ function playRound() {
 
 function whoWins() {
 if(playerPoints === 5) {
-    result.textContent = "THE PLAYER WINNED THE GAME!!!";
+    result.textContent = "THE PLAYER WON THE GAME!!!";
     playerPoints = 0;
     computerPoints = 0;
     computerPointsEl.textContent = "Computer points: " + computerPoints;
     playerPointsEl.textContent = "Player points: " + playerPoints;
 }
 else if (computerPoints === 5) {
-    result.textContent = ("THE COMPUTER WINNED THE GAME!!!")
+    result.textContent = ("THE COMPUTER WON THE GAME!!!")
     playerPoints = 0;
     computerPoints = 0;
     computerPointsEl.textContent = "Computer points: " + computerPoints;
