@@ -1,10 +1,26 @@
-const buttonEl = document.getElementById("button")
-const inputEl = document.getElementById("input")
 const playerPointsEl = document.getElementById("playerPoints")
 const computerPointsEl = document.getElementById("computerPoints")
 const result = document.getElementById("result")
+const rock = document.getElementById("rock")
+const paper = document.getElementById("paper")
+const scissors = document.getElementById("scissors")
 
-buttonEl.addEventListener("click", playRound);
+rock.addEventListener("click", rockChoice);
+paper.addEventListener("click", paperChoice);
+scissors.addEventListener("click", scissorsChoice);
+
+function rockChoice() {
+    playerSelection = "rock";
+    playRound();
+}
+function paperChoice() {
+    playerSelection = "paper";
+    playRound();
+}
+function scissorsChoice() {
+    playerSelection = "scissors";
+    playRound();
+}
 
 function getComputerChoice() {
    let randomNum = Math.floor(Math.random() * 3)
@@ -25,7 +41,6 @@ let playerSelection = "";
 
 function playRound() {
     computerSelection = getComputerChoice();
-    playerSelection = inputEl.value.toLowerCase();
     if(playerSelection === "rock" && computerSelection === "rock") {
         console.log("Tie")
         result.textContent = "Tie";
@@ -81,9 +96,17 @@ function playRound() {
 
 function whoWins() {
 if(playerPoints === 5) {
-    console.log("THE PLAYER WINS!!!!")
+    result.textContent = "THE PLAYER WINNED THE GAME!!!!!!!!!!!";
+    playerPoints = 0;
+    computerPoints = 0;
+    computerPointsEl.textContent = "Computer points: " + computerPoints;
+    playerPointsEl.textContent = "Player points: " + playerPoints;
 }
 else if (computerPoints === 5) {
-    console.log("THE PLAYER WINS!!!!")
+    result.textContent = ("THE COMPUTER WINNED THE GAME!!!!!!!!!!!")
+    computerPoints = 0;
+    computerPoints = 0;
+    computerPointsEl.textContent = "Computer points: " + computerPoints;
+    playerPointsEl.textContent = "Player points: " + playerPoints;
 }
 }
