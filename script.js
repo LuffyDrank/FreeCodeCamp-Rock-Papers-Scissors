@@ -25,7 +25,7 @@ let playerSelection = "";
 
 function playRound() {
     computerSelection = getComputerChoice();
-    playerSelection = inputEl.value;
+    playerSelection = inputEl.value.toLowerCase();
     if(playerSelection === "rock" && computerSelection === "rock") {
         console.log("Tie")
         result.textContent = "Tie";
