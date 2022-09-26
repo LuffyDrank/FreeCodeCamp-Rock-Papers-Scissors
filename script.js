@@ -48,19 +48,19 @@ function playRound() {
     else if(playerSelection === "rock" && computerSelection === "paper") {
         console.log("Computer wins")
         computerPoints += 1;
-        result.textContent = "Computer wins";
+        result.textContent = "Computer wins the round";
         computerPointsEl.textContent = "Computer points: " + computerPoints
     }
     else if(playerSelection === "rock" && computerSelection === "scissors") {
         console.log("Player wins")
         playerPoints += 1;
-        result.textContent = "Player wins";
+        result.textContent = "Player wins the round";
         playerPointsEl.textContent = "Player points: " + playerPoints
     }
     else if(playerSelection === "paper" && computerSelection === "scissors") {
         console.log("Computer wins")
         computerPoints += 1;
-        result.textContent = "Computer wins";
+        result.textContent = "Computer wins the round";
         computerPointsEl.textContent = "Computer points: " + computerPoints
     }
     else if(playerSelection === "paper" && computerSelection === "paper") {
@@ -70,7 +70,7 @@ function playRound() {
     else if(playerSelection === "paper" && computerSelection === "rock") {
         console.log("Player wins")
         playerPoints += 1;
-        result.textContent = "Player wins";
+        result.textContent = "Player wins the round";
         playerPointsEl.textContent = "Player points: " + playerPoints
     }
     else if(playerSelection === "scissors" && computerSelection === "scissors") {
@@ -80,13 +80,13 @@ function playRound() {
     else if(playerSelection === "scissors" && computerSelection === "rock") {
         console.log("Computer wins")
         computerPoints += 1;
-        result.textContent = "Computer wins";
+        result.textContent = "Computer wins the round";
         computerPointsEl.textContent = "Computer points: " + computerPoints
     }
     else if(playerSelection === "scissors" && computerSelection === "paper") {
         console.log("Player wins")
         playerPoints += 1;
-        result.textContent = "Player wins";
+        result.textContent = "Player wins the round";
         playerPointsEl.textContent = "Player points: " + playerPoints
     }
     console.log("Player:" + playerPoints)
@@ -96,15 +96,15 @@ function playRound() {
 
 function whoWins() {
 if(playerPoints === 5) {
-    result.textContent = "THE PLAYER WINNED THE GAME!!!!!!!!!!!";
+    result.textContent = "THE PLAYER WINNED THE GAME!!!";
     playerPoints = 0;
     computerPoints = 0;
     computerPointsEl.textContent = "Computer points: " + computerPoints;
     playerPointsEl.textContent = "Player points: " + playerPoints;
 }
 else if (computerPoints === 5) {
-    result.textContent = ("THE COMPUTER WINNED THE GAME!!!!!!!!!!!")
-    computerPoints = 0;
+    result.textContent = ("THE COMPUTER WINNED THE GAME!!!")
+    playerPoints = 0;
     computerPoints = 0;
     computerPointsEl.textContent = "Computer points: " + computerPoints;
     playerPointsEl.textContent = "Player points: " + playerPoints;
