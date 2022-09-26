@@ -40,6 +40,7 @@ let computerSelection = "";
 let playerSelection = "";
 
 function playRound() {
+    result.style.display="block";
     computerSelection = getComputerChoice();
     if(playerSelection === "rock" && computerSelection === "rock") {
         console.log("Tie")
@@ -103,7 +104,7 @@ if(playerPoints === 5) {
     playerPointsEl.textContent = "Player points: " + playerPoints;
 }
 else if (computerPoints === 5) {
-    result.textContent = ("THE COMPUTER WON THE GAME!!!")
+    result.textContent = "THE COMPUTER WON THE GAME!!!"
     playerPoints = 0;
     computerPoints = 0;
     computerPointsEl.textContent = "Computer points: " + computerPoints;
