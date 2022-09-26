@@ -1,13 +1,22 @@
-const playerPointsEl = document.getElementById("playerPoints")
-const computerPointsEl = document.getElementById("computerPoints")
-const result = document.getElementById("result")
-const rock = document.getElementById("rock")
-const paper = document.getElementById("paper")
-const scissors = document.getElementById("scissors")
+const playerPointsEl = document.getElementById("playerPoints");
+const computerPointsEl = document.getElementById("computerPoints");
+const result = document.getElementById("result");
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+const resetButton = document.getElementById("resetButton");
+const computerChoiceEl = document.getElementById("computerChoiceEl")
+const  playerSelectionEl = document.getElementById("playerChoiceEl")
 
 rock.addEventListener("click", rockChoice);
 paper.addEventListener("click", paperChoice);
 scissors.addEventListener("click", scissorsChoice);
+resetButton.addEventListener("click", startOver);
+
+let computerPoints = 0
+let playerPoints = 0
+let computerSelection = "";
+let playerSelection = "";
 
 function rockChoice() {
     playerSelection = "rock";
@@ -24,24 +33,29 @@ function scissorsChoice() {
 
 function getComputerChoice() {
    let randomNum = Math.floor(Math.random() * 3)
+   computerChoiceEl.style.display = "block";
    if(randomNum === 0) {
+    computerChoiceEl.textContent = "The computer chose: " + "rock";
     return "rock"
    }
    else if(randomNum === 1) {
+    computerChoiceEl.textContent = "The computer chose: " + "paper";
     return "paper"
    }
    else {
+    computerChoiceEl.textContent = "The computer chose: " + "scissors";
     return "scissors"
    }
+
 }
-let computerPoints = 0
-let playerPoints = 0
-let computerSelection = "";
-let playerSelection = "";
+
 
 function playRound() {
+    if(playerPoints !== 5 && computerPoints !== 5 ) {
     result.style.display="block";
     computerSelection = getComputerChoice();
+    playerChoiceEl.textContent = "Player chose: " + playerSelection
+    playerChoiceEl.style.display = "block";
     if(playerSelection === "rock" && computerSelection === "rock") {
         console.log("Tie")
         result.textContent = "Tie";
@@ -90,6 +104,7 @@ function playRound() {
         result.textContent = "Player wins the round";
         playerPointsEl.textContent = "Player points: " + playerPoints
     }
+}
     console.log("Player:" + playerPoints)
     console.log("Computer:" + computerPoints)
     whoWins()
@@ -97,17 +112,24 @@ function playRound() {
 
 function whoWins() {
 if(playerPoints === 5) {
+    result.style.backgroundColor = "#950000";
+    result.style.color = "white";
     result.textContent = "THE PLAYER WON THE GAME!!!";
-    playerPoints = 0;
-    computerPoints = 0;
-    computerPointsEl.textContent = "Computer points: " + computerPoints;
-    playerPointsEl.textContent = "Player points: " + playerPoints;
 }
 else if (computerPoints === 5) {
+    result.style.backgroundColor = "#950000";
+    result.style.color = "white";
     result.textContent = "THE COMPUTER WON THE GAME!!!"
+}
+}
+function startOver(){
     playerPoints = 0;
     computerPoints = 0;
+    result.style.backgroundColor = "#E6B8B8";
+    result.style.color = "black";
+    result.style.display="none";
+    computerChoiceEl.style.display = "none";
+    playerChoiceEl.style.display = "none";
     computerPointsEl.textContent = "Computer points: " + computerPoints;
     playerPointsEl.textContent = "Player points: " + playerPoints;
-}
 }

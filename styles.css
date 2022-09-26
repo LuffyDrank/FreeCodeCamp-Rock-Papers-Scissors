@@ -1,5 +1,8 @@
-html {
+* {
     box-sizing: border-box;
+    max-width: 100%;
+}
+html {
     font-size: 16px;
 }
 body {
@@ -7,45 +10,96 @@ body {
     padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
-}
-input {
-    width: 25%;
-    text-align: center;
+    background-color: #383838;
 }
 button {
-    font-size: 30px;
+    font-size: 2rem;
     padding: 10px;
     margin: 5px;
-    border: solid 2px black;
-    background-color: rgb(154, 0, 0);
-    color: white;
+    border: none;
+    background-color: #BCE4E6;
+    color: rgb(0, 0, 0);
     border-radius: 10px;
     cursor: pointer;
 }
 .container {
-    background-color:rgb(56, 56, 56);
-    width: 50%;
+    background-color:#7b3dd2;
+    padding: 10px 20px;
     border-radius: 10px;
     color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 #body-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #BAD6C7;
+    padding-bottom: 20px;
+    min-height: 100vh;
 }
 #welcome-container {
-    background-color: #0D2600;
-    color: #ffffff;
-    padding: 20px;
+    background-color: #BAD6C7;
+    color: #000000;
+    padding: 0 50px;
     border-radius: 10px;
 }
 #options-container {
+    display: flex;
     margin: 20px;
+    justify-content: center;
+}
+img {
+    width: 200px;
+    height: 200px;
 }
 h2 {
-    background-color:rgb(87, 0, 0);
-    color: white;
+    background-color:#E6B8B8;
+    color: rgb(0, 0, 0);
     border-radius: 10px;
     padding: 20px;
+    margin: 10px;
+    flex: 0 1 33vw;
+}
+#rock, #paper, #scissors {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+#resetButton {
+    background-color: rgb(40, 40, 40);
+    color: white;
+}
+#playerChoiceEl {
+    background-color:#a6f4f9;
+    color: black;
+}
+#computerChoiceEl {
+    background-color: gray;
+    color: white;
+}
+#info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+@media only screen and (max-width: 768px) {
+    #options-container {
+        flex-wrap: wrap;
+    }
+    #info {
+        flex-wrap: wrap;
+    }
+    h2 {
+        flex: 0 1 90vw;
+    }
+    img {
+        width: 130px;
+        height: 130px;
+    }
 }
